@@ -1,20 +1,28 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import colors from '@/assets/colors';
+import { useRouter } from 'expo-router';
+import Button from '@/components/button/Button';
 
 export default function TelaInicial() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Zona Azul</Text>
       <Text style={styles.subtitle}>Camaragibe</Text>
 
-      <TouchableOpacity style={styles.button}>
+      {/* <TouchableOpacity style={styles.button} onPress={() => router.push('/telaLogin')}>
         <Text style={styles.buttonText}>ENTRAR</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
-      <TouchableOpacity style={styles.button}>
+      {/* Erro é pq a variavel tem que ser do tipo RelativePathString que é uma string de caminho*/}
+      <Button label='ENTRAR' route="/loginScreen"/>
+
+      <Button label='REGISTRO' route='/registerScreen'/>
+      {/* <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>REGISTRO</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       {/* Espaço para imagem (pode substituir pela sua depois) */}
       <Image
