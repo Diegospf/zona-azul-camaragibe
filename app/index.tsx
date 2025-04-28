@@ -17,9 +17,9 @@ export default function TelaInicial() {
       </TouchableOpacity> */}
 
       {/* Erro é pq a variavel tem que ser do tipo RelativePathString que é uma string de caminho*/}
-      <Button label='ENTRAR' route="/loginScreen"/>
+      <Button label='ENTRAR' route={'/myVehicleScreen' as any}/>
 
-      <Button label='REGISTRO' route='/registerScreen'/>
+      <Button label='REGISTRO' route={'/registerScreen' as any}/>
       {/* <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>REGISTRO</Text>
       </TouchableOpacity> */}
@@ -52,20 +52,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: '#fff',
     marginBottom: 40,
-  },
-  button: {
-    backgroundColor: colors.secondary,
-    paddingVertical: 15,
-    paddingHorizontal: 60,
-    borderRadius: 30,
-    marginBottom: 20,
-    width: '100%',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
   },
   image: {
     width: 180,
