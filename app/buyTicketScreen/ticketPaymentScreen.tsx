@@ -29,7 +29,7 @@ export default function ResumoPedidoScreen() {
   
         {/* Botões usando seu componente */}
         <Button
-          label="PIX COPIA E COLA"
+          label="PIX COPIA E COLA" route={'/buyTicketScreen/ticketSuccessScreen' as any}
         />
   
         <Button

@@ -64,6 +64,7 @@ export default function CadastrarVeiculoScreen() {
 
       <Button
         label="CADASTRAR"
+        route={'/myVehicleScreen/registerVehicleScreen/confirmVehicleScreen' as any}
       />
     </ScrollView>
   );

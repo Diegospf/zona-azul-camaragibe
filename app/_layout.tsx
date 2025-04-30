@@ -47,9 +47,13 @@ export default function RootLayout() {
         <Stack.Screen name="loginScreen" options={{ title: "Login" }} />
         <Stack.Screen name="registerScreen" options={{ title: "Registro" }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="myVehicleScreen" options={{ title: "Seus Veículos" }} />
         <Stack.Screen name="buyTicketScreen" options={{ headerShown: false }} />
+
+
+        {/* <Stack.Screen name="myVehicleScreen" options={{ title: "Seus Veículos" }} />
+        
         <Stack.Screen name="registerVehicleScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="historyScreen" options={{ headerShown: false }} /> */}
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

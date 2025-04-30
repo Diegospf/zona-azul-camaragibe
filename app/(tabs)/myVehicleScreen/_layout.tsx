@@ -3,7 +3,7 @@ import { Stack } from 'expo-router';
 
 import 'react-native-reanimated';
 
-export default function RegisterVehicleLayout() {
+export default function MyVehicleLayout() {
 
   return (
     <Stack
@@ -19,9 +19,8 @@ export default function RegisterVehicleLayout() {
         headerShadowVisible: false, // Remove a sombra do cabeçalho
       }}
     >
-      <Stack.Screen name="registerVehicleScreen" options={{ title: "Cadastrar Veículo" }} />
-      <Stack.Screen name="ticketPaymentTypeScreen" options={{ title: "Cadastrar Veículo" }} />
-      <Stack.Screen name="ticketPaymentScreen" options={{ title: "Cadastrar Veículo" }} />
+      <Stack.Screen name="myVehicleScreen" options={{ title: "Seus Veículos" }} />
+      <Stack.Screen name="registerVehicleScreen" options={{ headerShown: false }} />
     </Stack>
   );
 }

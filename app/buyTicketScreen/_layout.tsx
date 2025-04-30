@@ -26,6 +26,7 @@ export default function BuyTicketLayout() {
             <Stack.Screen name="ticketResumeScreen" options={{ title: "Comprar Ticket" }} />
             <Stack.Screen name="ticketPaymentTypeScreen" options={{ title: "Comprar Ticket" }} />
             <Stack.Screen name="ticketPaymentScreen" options={{ title: "Comprar Ticket" }} />
+            <Stack.Screen name="ticketSuccessScreen" options={{ headerShown: false }} />
 
         </Stack>
     );

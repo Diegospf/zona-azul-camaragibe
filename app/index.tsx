@@ -17,14 +17,9 @@ export default function TelaInicial() {
       </TouchableOpacity> */}
 
       {/* Erro é pq a variavel tem que ser do tipo RelativePathString que é uma string de caminho*/}
-      <Button label='ENTRAR' route={'/myVehicleScreen' as any}/>
+      <Button label='ENTRAR' route={'(tabs)' as any}/>
 
       <Button label='REGISTRO' route={'/registerScreen' as any}/>
-      {/* <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>REGISTRO</Text>
-      </TouchableOpacity> */}
-
-      {/* Espaço para imagem (pode substituir pela sua depois) */}
       <Image
         source={require('../assets/images/camaragibe-logo.png')} // Substitua pelo seu
         style={styles.image}

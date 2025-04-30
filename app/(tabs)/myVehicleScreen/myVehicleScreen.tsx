@@ -15,7 +15,7 @@ export default function MyVehicles() {
                     { label: 'ABC1234', onPress: () => { } },
                 ]} />
 
-            <Button label='Cadastrar Veículo' />
+            <Button label='Cadastrar Veículo' route={'/myVehicleScreen/registerVehicleScreen' as any}/>
         </View>
     );
 }
