@@ -9,7 +9,7 @@ export default function CompraSucesso() {
     <SuccessScreen
       message="Compra realizada com sucesso"
       secondaryButtonLabel="Voltar ao Início"
-      secondaryRoute={"/"}
+      secondaryRoute={"(tabs)"}
       primaryButtonLabel="Ver meu ticket"
       primaryRoute={"/historyScreen/ticketScreen"} //de alguma forma passar o ticket que foi criado para ser exibido na tela
     />

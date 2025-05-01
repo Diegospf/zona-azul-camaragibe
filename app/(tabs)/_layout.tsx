@@ -2,21 +2,20 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+
 import colors from '@/assets/colors';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  
 
   return (
     <Tabs
       screenOptions={{
+        tabBarActiveTintColor: colors.secondary,
+        tabBarInactiveTintColor: colors.secondary,
         headerShown: false,
+        popToTopOnBlur: true,
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
@@ -34,28 +33,28 @@ export default function TabLayout() {
         options={{
           href: null,
           //title: 'Home',
-          //tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          //tabBarIcon: () => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="myVehicleScreen"	
+        name="myVehicleScreen"
         options={{
           title: 'Veículos',
-          tabBarIcon: ({ color }) => <Ionicons  name="car" size={28} color={color} />,
+          tabBarIcon: () => <Ionicons  name="car" size={28} color={colors.secondary} />,
         }}
       />
       <Tabs.Screen
         name="historyScreen"	
         options={{
           title: 'Histórico',
-          tabBarIcon: ({ color }) => <Ionicons  name="time" size={28} color={color} />,
+          tabBarIcon: () => <Ionicons  name="time" size={28} color={colors.secondary} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
           title: 'Perfil',
-          tabBarIcon: ({ color }) => <Ionicons name="person" size={28}  color={color} />,
+          tabBarIcon: () => <Ionicons name="person" size={28}  color={colors.secondary} />,
         }}
       />
     </Tabs>

@@ -10,7 +10,7 @@ export default function Home() {
     return (
         <View style={styles.container}>
             <ImageBackground
-                source={require('@/assets/images/map-sample.webp')} 
+                source={require('@/assets/images/map-sample.jpg')} 
                 resizeMode="cover"
                 style={styles.map}
             >
@@ -35,12 +35,13 @@ const styles = StyleSheet.create({
     map: {
         flex: 1,
         justifyContent: 'flex-end',
-        alignItems: 'center',
+        //alignItems: 'center',
+        position: 'relative',
     },
     floatingButton: {
         position: 'absolute',
-        bottom: 130,
-        right: 20,
+        bottom: 30,
+        right: '10%',
         backgroundColor: '#7CC420',
         borderRadius: 50,
         padding: 14,
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
     },
     buyButtonContainer: {
-        marginBottom: 80, // margem acima da tab bar
+        marginBottom: 10, 
         width: '100%',
         alignItems: 'center',
     },

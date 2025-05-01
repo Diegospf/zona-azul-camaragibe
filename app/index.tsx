@@ -12,14 +12,11 @@ export default function TelaInicial() {
       <Text style={styles.title}>Zona Azul</Text>
       <Text style={styles.subtitle}>Camaragibe</Text>
 
-      {/* <TouchableOpacity style={styles.button} onPress={() => router.push('/telaLogin')}>
-        <Text style={styles.buttonText}>ENTRAR</Text>
-      </TouchableOpacity> */}
 
       {/* Erro é pq a variavel tem que ser do tipo RelativePathString que é uma string de caminho*/}
       <Button label='ENTRAR' route={'(tabs)' as any}/>
 
-      <Button label='REGISTRO' route={'/registerScreen' as any}/>
+      <Button label='REGISTRAR' route={'/registerScreen' as any}/>
       <Image
         source={require('../assets/images/camaragibe-logo.png')} // Substitua pelo seu
         style={styles.image}
