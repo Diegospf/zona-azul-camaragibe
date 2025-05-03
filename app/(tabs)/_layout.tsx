@@ -2,42 +2,66 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+
+import colors from '@/assets/colors';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: colors.secondary,
+        tabBarInactiveTintColor: colors.secondary,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
+        popToTopOnBlur: true,
+        tabBarLabelStyle: {
+          //fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'Arvo-Regular',
+        },
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
+            
           },
-          default: {},
+          default: {
+            backgroundColor: colors.primary,
+            borderTopWidth: 0,
+            
+
+          },
         }),
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          href: null,
+          //title: 'Home',
+          //tabBarIcon: () => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="myVehicleScreen"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Veículos',
+          tabBarIcon: () => <Ionicons  name="car" size={28} color={colors.secondary} />,
+        }}
+      />
+      <Tabs.Screen
+        name="historyScreen"	
+        options={{
+          title: 'Histórico',
+          tabBarIcon: () => <Ionicons  name="time" size={28} color={colors.secondary} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Perfil',
+          tabBarIcon: () => <Ionicons name="person" size={28}  color={colors.secondary} />,
         }}
       />
     </Tabs>

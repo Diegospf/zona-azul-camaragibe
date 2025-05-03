@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import colors from '@/assets/colors';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -15,11 +16,16 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    'Arvo-Regular': require('../assets/fonts/Arvo-Regular.ttf'),
+    'Arvo-Bold': require('../assets/fonts/Arvo-Bold.ttf'),
+    'Arvo-Italic': require('../assets/fonts/Arvo-Italic.ttf'),
+    'Arvo-BoldItalic': require('../assets/fonts/Arvo-BoldItalic.ttf'),
   });
 
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
+      
     }
   }, [loaded]);
 
@@ -29,9 +35,26 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }}/>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: colors.primary, // Cor de fundo do cabeçalho para todas as telas
+          },
+          headerTintColor: '#fff', // Cor do texto do cabeçalho (título)
+          headerTitleStyle: {
+            fontSize: 24, // Tamanho da fonte do título
+            fontWeight: 'bold', // Estilo da fonte do título
+            fontFamily: 'Arvo-Bold',
+          },
+          
+          headerShadowVisible: false, // Remove a sombra do cabeçalho
+        }}
+      >
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="loginScreen" options={{ title: "Login" }} />
+        <Stack.Screen name="registerScreen" options={{ title: "Registro" }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="buyTicketScreen" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

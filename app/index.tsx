@@ -1,24 +1,25 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import colors from '@/assets/colors';
+import { useRouter } from 'expo-router';
+import Button from '@/components/button/Button';
+import ArvoText from '@/components/arvoText/ArvoText';
 
-export default function TelaInicial() {
+export default function InitialScreen() {
+  //const router = useRouter();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Zona Azul</Text>
-      <Text style={styles.subtitle}>Camaragibe</Text>
+      <ArvoText style={styles.title}>Zona Azul</ArvoText>
+      <ArvoText style={styles.subtitle}>Camaragibe</ArvoText>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>ENTRAR</Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>REGISTRO</Text>
-      </TouchableOpacity>
+      {/* Erro é pq a variavel tem que ser do tipo RelativePathString que é uma string de caminho*/}
+      <Button label='ENTRAR' route={'(tabs)' as any}/>
 
-      {/* Espaço para imagem (pode substituir pela sua depois) */}
+      <Button label='REGISTRAR' route={'/registerScreen' as any}/>
       <Image
-        source={require('../assets/images/camaragibe-logo.png')} // Substitua pelo seu
+        source={require('../assets/images/camaragibe-logo.png')} 
         style={styles.image}
         resizeMode="contain"
       />
@@ -39,25 +40,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#fff',
     marginBottom: 10,
+    fontFamily: 'Arvo-Bold',
   },
   subtitle: {
     fontSize: 28,
     color: '#fff',
     marginBottom: 40,
-  },
-  button: {
-    backgroundColor: colors.secondary,
-    paddingVertical: 15,
-    paddingHorizontal: 60,
-    borderRadius: 30,
-    marginBottom: 20,
-    width: '100%',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Arvo-Regular',
   },
   image: {
     width: 180,
