@@ -8,24 +8,24 @@ export default function HystoryScreen() {
 
       <TicketCard
         status="ativo"
-        placa="ABC1234"
-        horaInicio="14:30"
-        horaTermino="15:00"
-        data="17/10/2024"
-        duracao="30 minutos"
-        valor="R$10,00"
-        pagamento="PIX"
+        carPlate="ABC1234"
+        startTime="14:30"
+        endTime="15:00"
+        ticketDate="17/10/2024"
+        ticketDuration="30 minutos"
+        ticketValue="R$10,00"
+        ticketPayment="PIX"
         isPressable
       />
       <TicketCard
         status="expirado"
-        placa="ABC1234"
-        horaInicio="17:00"
-        horaTermino="17:30"
-        data="15/10/2024"
-        duracao="30 minutos"
-        valor="R$10,00"
-        pagamento="PIX"
+        carPlate="ABC1234"
+        startTime="17:00"
+        endTime="17:30"
+        ticketDate="15/10/2024"
+        ticketDuration="30 minutos"
+        ticketValue="R$10,00"
+        ticketPayment="PIX"
         isPressable
       />
       {/* Adicione mais tickets aqui um map deve ser feito pra ficar mais dinamico em relação a quantidade*/}

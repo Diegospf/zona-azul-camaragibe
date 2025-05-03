@@ -19,35 +19,35 @@ import ArvoText from '@/components/arvoText/ArvoText';
 export default function LoginScreen() {
     const router = useRouter();
 
-    const [telefone, setTelefone] = useState('');
-    const [senha, setSenha] = useState('');
-    const [mostrarSenha, setMostrarSenha] = useState(false);
-    const [manterConectado, setManterConectado] = useState(false);
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [displayPassword, setDisplayPassword] = useState(false);
+    const [stayLoggedIn, setStayLoggedIn] = useState(false);
 
     return (
         <View style={styles.container}>
 
-            <InputField icon="call" placeholder="TELEFONE" value={telefone} onChangeText={setTelefone} keyboardType='phone-pad' />
+            <InputField icon="call" placeholder="TELEFONE" value={phone} onChangeText={setPhone} keyboardType='phone-pad' />
             <InputField icon="lock-closed"
                 placeholder="SENHA"
-                secureTextEntry={!mostrarSenha}
-                value={senha}
-                onChangeText={setSenha}
-                rightIcon={mostrarSenha ? 'eye-off' : 'eye'}
-                onRightIconPress={() => setMostrarSenha(!mostrarSenha)} />
+                secureTextEntry={!displayPassword}
+                value={password}
+                onChangeText={setPassword}
+                rightIcon={displayPassword ? 'eye-off' : 'eye'}
+                onRightIconPress={() => setDisplayPassword(!displayPassword)} />
             
 
             <View style={styles.switchContainer}>
                 <Switch
-                    value={manterConectado}
-                    onValueChange={setManterConectado}
+                    value={stayLoggedIn}
+                    onValueChange={setStayLoggedIn}
                     thumbColor={colors.secondary}
                     trackColor={{ true: colors.secondary, false: '#ccc' }}
                 />
                 <ArvoText style={styles.switchText}>Manter conectado</ArvoText>
             </View>
 
-            <Button label='ENTRAR' />
+            <Button label='ENTRAR'  route={'(tabs)' as any}/>
 
             <Image
                 source={require('../assets/images/camaragibe-logo.png')}

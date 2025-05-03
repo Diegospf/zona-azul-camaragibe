@@ -7,13 +7,13 @@ import ArvoText from '@/components/arvoText/ArvoText';
 export default function TicketDetailsScreen() {
   const {
     status,
-    placa,
-    horaInicio,
-    horaTermino,
-    data,
-    duracao,
-    valor,
-    pagamento
+    carPlate,
+    startTime,
+    endTime,
+    ticketDate,
+    ticketDuration,
+    ticketValue,
+    ticketPayment
   } = useLocalSearchParams();
 
   const router = useRouter();
@@ -26,13 +26,13 @@ export default function TicketDetailsScreen() {
           <ArvoText style={styles.title}>Ticket Ativo</ArvoText>
           <Ionicons name="ellipse" size={16} color="#00C851" />
         </View>
-        <ArvoText style={styles.text}>Placa: {placa}</ArvoText>
-        <ArvoText style={styles.text}>Hora de Início: {horaInicio}</ArvoText>
-        <ArvoText style={styles.text}>Hora de Término: {horaTermino}</ArvoText>
-        <ArvoText style={styles.text}>Data: {data}</ArvoText>
-        <ArvoText style={styles.text}>Duração: {duracao}</ArvoText>
-        <ArvoText style={styles.text}>Valor: {valor}</ArvoText>
-        <ArvoText style={styles.text}>Pagamento via: {pagamento}</ArvoText>
+        <ArvoText style={styles.text}>Placa: {carPlate}</ArvoText>
+        <ArvoText style={styles.text}>Hora de Início: {startTime}</ArvoText>
+        <ArvoText style={styles.text}>Hora de Término: {endTime}</ArvoText>
+        <ArvoText style={styles.text}>Data: {ticketDate}</ArvoText>
+        <ArvoText style={styles.text}>Duração: {ticketDuration}</ArvoText>
+        <ArvoText style={styles.text}>Valor: {ticketValue}</ArvoText>
+        <ArvoText style={styles.text}>Pagamento via: {ticketPayment}</ArvoText>
       </View>
 
       {/* <Pressable style={styles.shareButton}>
