@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
         flex: 1,
         color: colors.text,
         fontWeight: 'bold',
+        fontFamily: 'Arvo-Regular'
     },
     icon: {
         marginRight: 8,

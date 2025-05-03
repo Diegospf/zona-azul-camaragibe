@@ -2,6 +2,7 @@ import colors from '@/assets/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
+import ArvoText from '../arvoText/ArvoText';
 
 type OptionSelectionScreenProps = {
     title?: string;
@@ -24,7 +25,7 @@ export default function OptionSelectionScreen({ title = '', options }: OptionSel
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{title}</Text>
+            <ArvoText style={styles.title}>{title}</ArvoText>
 
             <ScrollView
                 contentContainerStyle={styles.scrollContent}
@@ -53,9 +54,9 @@ export default function OptionSelectionScreen({ title = '', options }: OptionSel
                                     />
                                 )}
                                 {/* Adicione o ícone aqui se necessário */}
-                                <Text style={[styles.optionText, isSelected && styles.selectedText]}>
+                                <ArvoText style={[styles.optionText, isSelected && styles.selectedText]}>
                                     {option.label}
-                                </Text>
+                                </ArvoText>
                             </View>
                         </Pressable>
                     );
@@ -64,6 +65,8 @@ export default function OptionSelectionScreen({ title = '', options }: OptionSel
         </View>
     );
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -79,7 +82,6 @@ const styles = StyleSheet.create({
         color: 'white',
         marginBottom: 20,
         textAlign: 'center',
-        fontFamily: 'serif',
     },
     scrollContent: {
         paddingBottom: 40,

@@ -16,14 +16,21 @@ export default function TabLayout() {
         tabBarInactiveTintColor: colors.secondary,
         headerShown: false,
         popToTopOnBlur: true,
+        tabBarLabelStyle: {
+          //fontSize: 12,
+          fontWeight: 600,
+          fontFamily: 'Arvo-Regular',
+        },
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
+            
           },
           default: {
             backgroundColor: colors.primary,
             borderTopWidth: 0,
+            
 
           },
         }),

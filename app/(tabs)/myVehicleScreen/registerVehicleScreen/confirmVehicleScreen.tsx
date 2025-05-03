@@ -3,34 +3,25 @@ import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import colors from "@/assets/colors";
 import NewCarPlate from "@/components/carPlate/NewCarPlate";
+import ArvoText from "@/components/arvoText/ArvoText";
 
-export default function ConfirmarPlaca() {
+export default function ConfirmPlateScreen() {
     const router = useRouter();
-    const { placa } = useLocalSearchParams(); // recebe a placa da tela anterior
+   // const { placa } = useLocalSearchParams(); // recebe a placa da tela anterior
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Essa é sua placa?</Text>
+            <ArvoText style={styles.title}>Essa é sua placa?</ArvoText>
 
-            <View style={styles.placa}>
+            <View style={styles.plate}>
                 <NewCarPlate />
             </View>
-
-            {/* <View style={styles.placaContainer}>
-                <Image
-                    source={require("@/assets/images/placa.png")} // sua imagem da placa
-                    style={styles.placaImagem}
-                    resizeMode="contain"
-                />
-                <Text style={styles.placaTexto}>22brb</Text>
-            </View> */}
-
-            <View style={styles.botoes}>
-                <Pressable style={[styles.botao, styles.botaoNao]} onPress={() => router.replace("/")}>
-                    <Text style={styles.textoBotao}>NÃO</Text>
+            <View style={styles.buttons}>
+                <Pressable style={[styles.button, styles.buttonNo]} onPress={() => router.push("/")}>
+                    <ArvoText style={styles.textButton}>NÃO</ArvoText>
                 </Pressable>
-                <Pressable style={[styles.botao, styles.botaoSim]} onPress={() => router.push("/myVehicleScreen/registerVehicleScreen/registerSuccessScreen")}>
-                    <Text style={styles.textoBotao}>SIM</Text>
+                <Pressable style={[styles.button, styles.buttonYes]} onPress={() => router.push("/myVehicleScreen/registerVehicleScreen/registerSuccessScreen")}>
+                    <ArvoText style={styles.textButton}>SIM</ArvoText>
                 </Pressable>
             </View>
         </View>
@@ -51,55 +42,30 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginBottom: 30,
     },
-    placaContainer: {
-        //flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
-        marginBottom: 40,
-        width: "80%",
-        height: '40%',
-    },
-    placaImagem: {
-        width: '100%',
-        //height: 100,
-    },
-    placaTexto: {
-        position: "absolute",
-        textAlign: "center",
-
-        fontSize: 28,
-        fontWeight: "bold",
-        color: "#00205B", // azul escuro, similar à fonte da placa Mercosul
-        letterSpacing: 4,
-        top: '45%',
-        //left: '50%',
-        //width: '80%', 
-    },
-    botoes: {
+    buttons: {
         flexDirection: "row",
         justifyContent: "space-between",
         width: "80%",
         gap: 20,
     },
-    botao: {
+    button: {
         flex: 1,
         paddingVertical: 15,
         borderRadius: 10,
         alignItems: "center",
     },
-    botaoNao: {
+    buttonNo: {
         backgroundColor: "#ff5f5f",
     },
-    botaoSim: {
+    buttonYes: {
         backgroundColor: "#7ed957",
     },
-    textoBotao: {
+    textButton: {
         color: "#fff",
         fontSize: 18,
         fontWeight: "bold",
     },
-    placa: {
+    plate: {
         marginVertical: '20%',
         width: '80%',
     }

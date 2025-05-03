@@ -14,6 +14,7 @@ import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import Button from '@/components/button/Button';
 import InputField from '@/components/inputField/InputField';
+import ArvoText from '@/components/arvoText/ArvoText';
 
 export default function LoginScreen() {
     const router = useRouter();
@@ -43,7 +44,7 @@ export default function LoginScreen() {
                     thumbColor={colors.secondary}
                     trackColor={{ true: colors.secondary, false: '#ccc' }}
                 />
-                <Text style={styles.switchText}>Manter conectado</Text>
+                <ArvoText style={styles.switchText}>Manter conectado</ArvoText>
             </View>
 
             <Button label='ENTRAR' />

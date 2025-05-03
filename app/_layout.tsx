@@ -16,11 +16,16 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    'Arvo-Regular': require('../assets/fonts/Arvo-Regular.ttf'),
+    'Arvo-Bold': require('../assets/fonts/Arvo-Bold.ttf'),
+    'Arvo-Italic': require('../assets/fonts/Arvo-Italic.ttf'),
+    'Arvo-BoldItalic': require('../assets/fonts/Arvo-BoldItalic.ttf'),
   });
 
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
+      
     }
   }, [loaded]);
 
@@ -39,7 +44,9 @@ export default function RootLayout() {
           headerTitleStyle: {
             fontSize: 24, // Tamanho da fonte do título
             fontWeight: 'bold', // Estilo da fonte do título
+            fontFamily: 'Arvo-Bold',
           },
+          
           headerShadowVisible: false, // Remove a sombra do cabeçalho
         }}
       >

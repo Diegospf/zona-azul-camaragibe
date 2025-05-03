@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import ArvoText from '../arvoText/ArvoText';
 
 type TicketStatus = 'ativo' | 'expirado';
 
@@ -49,24 +50,24 @@ export default function TicketCard({
   };
 
   const CardContent = () => (
-    <View style={[styles.card, !isAtivo && styles.cardExpirado]}>
+    <View style={[styles.card, !isAtivo && styles.cardExpired]}>
       <View style={styles.header}>
-        <Text style={styles.title}>
+        <ArvoText style={styles.title}>
           {isAtivo ? 'Ticket Ativo' : 'Ticket Expirado'}
-        </Text>
+        </ArvoText>
         <Ionicons
           name="ellipse"
           size={16}
           color={isAtivo ? '#00C851' : '#ff4444'}
         />
       </View>
-      <Text style={styles.text}>Placa: {placa}</Text>
-      <Text style={styles.text}>Hora de Início: {horaInicio}</Text>
-      <Text style={styles.text}>Hora de Término: {horaTermino}</Text>
-      <Text style={styles.text}>Data: {data}</Text>
-      <Text style={styles.text}>Duração: {duracao}</Text>
-      <Text style={styles.text}>Valor: {valor}</Text>
-      <Text style={styles.text}>Pagamento via: {pagamento}</Text>
+      <ArvoText style={styles.text}>Placa: {placa}</ArvoText>
+      <ArvoText style={styles.text}>Hora de Início: {horaInicio}</ArvoText>
+      <ArvoText style={styles.text}>Hora de Término: {horaTermino}</ArvoText>
+      <ArvoText style={styles.text}>Data: {data}</ArvoText>
+      <ArvoText style={styles.text}>Duração: {duracao}</ArvoText>
+      <ArvoText style={styles.text}>Valor: {valor}</ArvoText>
+      <ArvoText style={styles.text}>Pagamento via: {pagamento}</ArvoText>
     </View>
   );
 
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 16
   },
-  cardExpirado: {
+  cardExpired: {
     backgroundColor: '#d3d3d3'
   },
   header: {

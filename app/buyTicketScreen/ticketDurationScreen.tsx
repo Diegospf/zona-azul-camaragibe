@@ -1,7 +1,7 @@
 import { useRouter } from 'expo-router';
 import OptionSelectionScreen from '@/components/optionSelectionScreen/OptionSelectionScreen';
 
-export default function TicketDuration() {
+export default function TicketDurationScreen() {
   const router = useRouter();
 
   return (

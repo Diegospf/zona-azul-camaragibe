@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Button from '@/components/button/Button';
 import InputField from '@/components/inputField/InputField';
 import colors from '@/assets/colors';
+import ArvoText from '@/components/arvoText/ArvoText';
 
 export default function RegisterScreen() {
     //const router = useRouter();
@@ -97,16 +98,6 @@ export default function RegisterScreen() {
                 rightIcon={showConfirmarSenha ? 'eye-off' : 'eye'}
                 onRightIconPress={() => setShowConfirmarSenha(!showConfirmarSenha)} />
 
-            {/* Checkbox
-            <Pressable onPress={() => setChecked(!checked)} style={styles.checkboxContainer}>
-                <Ionicons
-                    name={checked ? "checkbox-outline" : "square-outline"}
-                    size={24}
-                    color="#89d100"
-                />
-                <Text style={styles.checkboxLabel}>Li e concordo com os termos de uso</Text>
-            </Pressable> */}
-
             {/* CheckBox e termos */}
             <View style={styles.checkboxContainer}>
                 <Pressable onPress={() => setAceitouTermos(!aceitouTermos)} style={styles.checkboxPressable}>
@@ -116,21 +107,18 @@ export default function RegisterScreen() {
                         color={colors.secondary}
                     />
                 </Pressable>
-                <Text style={styles.checkboxLabel}>
+                <ArvoText style={styles.checkboxLabel}>
                     Li e concordo com os termos de uso
-                </Text>
+                </ArvoText>
             </View>
 
             {/* Mensagem de erro */}
             {error ? (
-                <Text style={styles.errorText}>{error}</Text>
+                <ArvoText style={styles.errorText}>{error}</ArvoText>
             ) : null}
 
             {/* Botão Registrar */}
-            <Button label='Registro' onPress={handleRegistrar} />
-            {/* <Pressable style={styles.button} onPress={() => alert('Registrado!')}>
-                <Text style={styles.buttonLabel}>REGISTRO</Text>
-            </Pressable> */}
+            <Button label='REGISTRO' onPress={handleRegistrar} />
         </ScrollView>
     );
 }

@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import SuccessScreen from "@/components/successScreen/SuccessScreen";
 
-export default function VeiculoSucesso() {
+export default function VehicleSuccessScreen() {
   const router = useRouter();
 
   return (

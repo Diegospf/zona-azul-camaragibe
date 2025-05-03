@@ -2,7 +2,7 @@
 import { useRouter } from "expo-router";
 import SuccessScreen from "@/components/successScreen/SuccessScreen";
 
-export default function CompraSucesso() {
+export default function TicketSuccessScreen() {
   const router = useRouter();
  
   return (

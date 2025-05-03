@@ -5,16 +5,17 @@ import OptionSelectionScreen from '@/components/optionSelectionScreen/OptionSele
 import colors from '@/assets/colors';
 import { useRouter } from 'expo-router';
 import QRCode from 'react-native-qrcode-svg';
+import ArvoText from '@/components/arvoText/ArvoText';
 
-export default function ResumoPedidoScreen() {
+export default function TicketPaymentScreen() {
     const qrCodeValue = 'chave-pix-exemplo'; // valor do QR Code
 
     return (
       <View style={styles.container}>
         {/* Texto explicativo */}
-        <Text style={styles.instructionText}>
+        <ArvoText style={styles.instructionText}>
           Leia o QRCode ou copie o código no aplicativo do seu banco e realize o pagamento.
-        </Text>
+        </ArvoText>
   
         {/* QRCode */}
         <View style={styles.qrContainer}>
@@ -23,8 +24,8 @@ export default function ResumoPedidoScreen() {
   
         {/* Valor e tempo */}
         <View style={styles.infoBox}>
-          <Text style={styles.infoText}>Valor: R$ 10,00</Text>
-          <Text style={styles.infoText}>QRCode expira em: 4:39 minutos</Text>
+          <ArvoText style={styles.infoText}>Valor: R$ 10,00</ArvoText>
+          <ArvoText style={styles.infoText}>QRCode expira em: 4:39 minutos</ArvoText>
         </View>
   
         {/* Botões usando seu componente */}

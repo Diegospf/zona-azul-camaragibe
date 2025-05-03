@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import OptionSelectionScreen from '@/components/optionSelectionScreen/OptionSelectionScreen';
 import { useRouter } from 'expo-router';
 
-export default function ComprarTicket() {
+export default function TicketBuyScreen() {
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
     const router = useRouter();
 
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: 'bold',
-        fontFamily: 'serif',
         color: '#fff',
         marginBottom: 20,
     },

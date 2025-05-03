@@ -2,6 +2,7 @@ import colors from "@/assets/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { RelativePathString, useRouter } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import ArvoText from "../arvoText/ArvoText";
 
 type Props = {
     label: string;
@@ -39,17 +40,17 @@ export default function Button({ label, route, onPress, icon, variant = "primary
                         name={icon as any}
                         size={24}
                         color={isPrimary ? "#fff" : "#000"}
-                        style={styles.icon}
+                        
                     />
                 )}
-                <Text
+                <ArvoText
                     style={[
                         styles.buttonLabel,
                         { color: isPrimary ? "#fff" : "#000" },
                     ]}
                 >
                     {label}
-                </Text>
+                </ArvoText>
             </Pressable>
         </View>
     );
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        gap: 10,
     },
     primaryButton: {
         backgroundColor: colors.secondary,
@@ -86,10 +88,8 @@ const styles = StyleSheet.create({
     },
     buttonLabel: {
         fontSize: 20,
-        fontWeight: "bold",
-        marginLeft: 10,
-    },
-    icon: {
-        marginRight: 10,
+        //fontWeight: 500,
+        textAlign: "center",
+        fontFamily: "Arvo-Bold",
     },
 });

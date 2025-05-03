@@ -5,7 +5,7 @@ import OptionSelectionScreen from '@/components/optionSelectionScreen/OptionSele
 import colors from '@/assets/colors';
 import { useRouter } from 'expo-router';
 
-export default function ResumoPedidoScreen() {
+export default function TicketResumeScreen() {
     const router = useRouter();
 
     return (

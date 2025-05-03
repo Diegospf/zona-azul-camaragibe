@@ -3,7 +3,7 @@ import { StyleSheet, Image, Platform } from 'react-native';
 
 import SuccessScreen from '@/components/successScreen/SuccessScreen';
 
-export default function TabTwoScreen() {
+export default function ProfileScreen() {
   return (
     <SuccessScreen
       message="PERFIL"

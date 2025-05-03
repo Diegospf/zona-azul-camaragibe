@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import colors from "@/assets/colors";
 import Button from "../button/Button";
+import ArvoText from "../arvoText/ArvoText";
 
 interface SuccessScreenProps {
     message: string;
@@ -26,7 +27,7 @@ const SuccessScreen: React.FC<SuccessScreenProps> = ({
                     <Ionicons name="checkmark-circle" size={160} color="#7ED321" />
                 </View>
             </View>
-            <Text style={styles.message}>{message}</Text>
+            <ArvoText style={styles.message}>{message}</ArvoText>
 
 
             <Button

@@ -3,7 +3,7 @@ import { Stack } from 'expo-router';
 
 import 'react-native-reanimated';
 
-export default function RegisterVehicleLayout() {
+export default function HistoryLayout() {
 
   return (
     <Stack
@@ -15,6 +15,7 @@ export default function RegisterVehicleLayout() {
         headerTitleStyle: {
           fontSize: 24, // Tamanho da fonte do título
           fontWeight: 'bold', // Estilo da fonte do título
+          fontFamily: 'Arvo-Bold',
         },
         headerShadowVisible: false, // Remove a sombra do cabeçalho
       }}

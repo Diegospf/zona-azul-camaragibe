@@ -1,3 +1,4 @@
+import ArvoText from '@/components/arvoText/ArvoText';
 import { Link, Stack } from 'expo-router';
 import { StyleSheet, Text, View } from 'react-native';
 
@@ -7,9 +8,9 @@ export default function NotFoundScreen() {
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={styles.container}>
-        <Text >This screen doesn't exist.</Text>
+        <ArvoText >This screen doesn't exist.</ArvoText>
         <Link href="/" style={styles.link}>
-          <Text >Go to home screen!</Text>
+          <ArvoText >Go to home screen!</ArvoText>
         </Link>
       </View>
     </>

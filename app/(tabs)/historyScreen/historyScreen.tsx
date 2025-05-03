@@ -2,7 +2,7 @@ import { ScrollView, View, Text, StyleSheet } from 'react-native';
 import TicketCard from '@/components/ticketCard/TicketCard';
 import colors from '@/assets/colors';
 
-export default function Historico() {
+export default function HystoryScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
 
@@ -28,7 +28,7 @@ export default function Historico() {
         pagamento="PIX"
         isPressable
       />
-      {/* Adicione mais tickets aqui */}
+      {/* Adicione mais tickets aqui um map deve ser feito pra ficar mais dinamico em relação a quantidade*/}
     </ScrollView>
   );
 }

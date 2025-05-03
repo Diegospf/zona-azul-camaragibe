@@ -15,6 +15,7 @@ export default function MyVehicleLayout() {
         headerTitleStyle: {
           fontSize: 24, // Tamanho da fonte do título
           fontWeight: 'bold', // Estilo da fonte do título
+          fontFamily: 'Arvo-Bold',
         },
         headerShadowVisible: false, // Remove a sombra do cabeçalho
       }}

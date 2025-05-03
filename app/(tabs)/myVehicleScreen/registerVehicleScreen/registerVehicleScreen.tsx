@@ -4,7 +4,7 @@ import InputField from '@/components/inputField/InputField';
 import Button from '@/components/button/Button';
 import colors from '@/assets/colors'; // já que seu input usa esse colors também
 
-export default function CadastrarVeiculoScreen() {
+export default function RegisterVehicleScreen() {
   const [placa, setPlaca] = useState('');
   const [confirmarPlaca, setConfirmarPlaca] = useState('');
   const [estadoPlaca, setEstadoPlaca] = useState('');

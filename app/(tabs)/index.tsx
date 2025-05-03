@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRouter } from 'expo-router';
 import Button from '@/components/button/Button'; // Seu botão personalizado
 
-export default function Home() {
+export default function HomeScreen() {
     const router = useRouter();
 
     return (

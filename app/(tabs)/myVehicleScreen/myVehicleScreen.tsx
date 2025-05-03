@@ -4,7 +4,7 @@ import Button from '@/components/button/Button';
 import { StyleSheet, View } from 'react-native';
 import colors from '@/assets/colors';
 
-export default function MyVehicles() {
+export default function MyVehicleScreen() {
     const router = useRouter();
 
     return (
@@ -15,7 +15,7 @@ export default function MyVehicles() {
                     { label: 'ABC1234', onPress: () => { } },
                 ]} />
 
-            <Button label='Cadastrar Veículo' route={'/myVehicleScreen/registerVehicleScreen' as any}/>
+            <Button label='CADASTRAR VEÍCULO' route={'/myVehicleScreen/registerVehicleScreen' as any}/>
         </View>
     );
 }

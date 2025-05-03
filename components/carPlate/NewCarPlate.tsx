@@ -1,25 +1,26 @@
 import { Image, StyleSheet, Text, View } from "react-native";
+import ArvoText from "../arvoText/ArvoText";
 
 
 export default function NewCarPlate() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.headerPlaca}>
+            <View style={styles.headerPlate}>
                 <Image
                     source={require("@/assets/images/mercosul.png")}
                     style={styles.imageHeader}
                 //resizeMode="contain"
                 />
-                <Text style={styles.textHeader}>BRASIL</Text>
+                <ArvoText style={styles.textHeader}>BRASIL</ArvoText>
                 <Image
                     source={require("@/assets/images/brasil.svg")}
                     style={styles.imageHeader}
                 //resizeMode="contain"
                 />
             </View>
-            <View style={styles.bodyPlaca}>
-                <Text style={styles.textBody}>ABC1235</Text>
+            <View style={styles.bodyPlate}>
+                <ArvoText style={styles.textBody}>ABC1235</ArvoText>
             </View >
         </View>
     );
@@ -32,7 +33,7 @@ const styles = StyleSheet.create({
         width: "100%",
         overflow: "hidden",
     },
-    headerPlaca: {
+    headerPlate: {
         backgroundColor: "#1E3A8A",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 16,
     },
-    bodyPlaca: {
+    bodyPlate: {
         backgroundColor: "#fff",
         paddingVertical: 15,
         //borderRadius: 8,

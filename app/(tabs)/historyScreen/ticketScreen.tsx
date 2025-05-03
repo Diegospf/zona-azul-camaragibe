@@ -2,8 +2,9 @@ import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import Button from '@/components/button/Button';
+import ArvoText from '@/components/arvoText/ArvoText';
 
-export default function TicketDetalhe() {
+export default function TicketDetailsScreen() {
   const {
     status,
     placa,
@@ -22,21 +23,21 @@ export default function TicketDetalhe() {
     <View style={styles.container}>
       <View style={styles.card}>
         <View style={styles.header}>
-          <Text style={styles.title}>Ticket Ativo</Text>
+          <ArvoText style={styles.title}>Ticket Ativo</ArvoText>
           <Ionicons name="ellipse" size={16} color="#00C851" />
         </View>
-        <Text style={styles.text}>Placa: {placa}</Text>
-        <Text style={styles.text}>Hora de Início: {horaInicio}</Text>
-        <Text style={styles.text}>Hora de Término: {horaTermino}</Text>
-        <Text style={styles.text}>Data: {data}</Text>
-        <Text style={styles.text}>Duração: {duracao}</Text>
-        <Text style={styles.text}>Valor: {valor}</Text>
-        <Text style={styles.text}>Pagamento via: {pagamento}</Text>
+        <ArvoText style={styles.text}>Placa: {placa}</ArvoText>
+        <ArvoText style={styles.text}>Hora de Início: {horaInicio}</ArvoText>
+        <ArvoText style={styles.text}>Hora de Término: {horaTermino}</ArvoText>
+        <ArvoText style={styles.text}>Data: {data}</ArvoText>
+        <ArvoText style={styles.text}>Duração: {duracao}</ArvoText>
+        <ArvoText style={styles.text}>Valor: {valor}</ArvoText>
+        <ArvoText style={styles.text}>Pagamento via: {pagamento}</ArvoText>
       </View>
 
       {/* <Pressable style={styles.shareButton}>
         <Ionicons name="share-social" size={20} color="white" />
-        <Text style={styles.shareText}>COMPARTILHAR</Text>
+        <ArvoText style={styles.shareText}>COMPARTILHAR</ArvoText>
       </Pressable> */}
       <Button label='Compartilhar' icon='share-social' variant='primary' />
 
