@@ -1,4 +1,4 @@
-// app/confirmarPlaca.tsx
+
 import { View, Text, Image, Pressable, StyleSheet } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import colors from "@/assets/colors";
@@ -7,7 +7,7 @@ import ArvoText from "@/components/arvoText/ArvoText";
 
 export default function ConfirmPlateScreen() {
     const router = useRouter();
-   // const { placa } = useLocalSearchParams(); // recebe a placa da tela anterior
+   // const { carPlate } = useLocalSearchParams(); // recebe a carPlate da tela anterior
 
     return (
         <View style={styles.container}>

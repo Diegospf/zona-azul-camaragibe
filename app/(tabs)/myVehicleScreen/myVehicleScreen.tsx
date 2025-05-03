@@ -23,7 +23,7 @@ export default function MyVehicleScreen() {
 const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
-        backgroundColor: colors.primary, // azul de fundo
+        backgroundColor: colors.primary, 
         padding: 20,
         justifyContent: 'center',
     },

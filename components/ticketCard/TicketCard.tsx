@@ -7,29 +7,29 @@ type TicketStatus = 'ativo' | 'expirado';
 
 interface TicketCardProps {
   status: TicketStatus;
-  placa: string;
-  horaInicio: string;
-  horaTermino: string;
-  data: string;
-  duracao: string;
-  valor: string;
-  pagamento: string;
+  carPlate: string;
+  startTime: string;
+  endTime: string;
+  ticketDate: string;
+  ticketDuration: string;
+  ticketValue: string;
+  ticketPayment: string;
   isPressable?: boolean;
 }
 
 export default function TicketCard({
   status,
-  placa,
-  horaInicio,
-  horaTermino,
-  data,
-  duracao,
-  valor,
-  pagamento,
+  carPlate,
+  startTime,
+  endTime,
+  ticketDate,
+  ticketDuration,
+  ticketValue,
+  ticketPayment,
   isPressable = false
 }: TicketCardProps) {
   const router = useRouter();
-  const isAtivo = status === 'ativo';
+  const isActive = status === 'ativo';
 
   const handlePress = () => {
     if (!isPressable) return;
@@ -38,36 +38,36 @@ export default function TicketCard({
       pathname: '/historyScreen/ticketScreen' as any,
       params: {
         status,
-        placa,
-        horaInicio,
-        horaTermino,
-        data,
-        duracao,
-        valor,
-        pagamento
+        carPlate,
+        startTime,
+        endTime,
+        ticketDate,
+        ticketDuration,
+        ticketValue,
+        ticketPayment
       }
     });
   };
 
   const CardContent = () => (
-    <View style={[styles.card, !isAtivo && styles.cardExpired]}>
+    <View style={[styles.card, !isActive && styles.cardExpired]}>
       <View style={styles.header}>
         <ArvoText style={styles.title}>
-          {isAtivo ? 'Ticket Ativo' : 'Ticket Expirado'}
+          {isActive ? 'Ticket Ativo' : 'Ticket Expirado'}
         </ArvoText>
         <Ionicons
           name="ellipse"
           size={16}
-          color={isAtivo ? '#00C851' : '#ff4444'}
+          color={isActive ? '#00C851' : '#ff4444'}
         />
       </View>
-      <ArvoText style={styles.text}>Placa: {placa}</ArvoText>
-      <ArvoText style={styles.text}>Hora de Início: {horaInicio}</ArvoText>
-      <ArvoText style={styles.text}>Hora de Término: {horaTermino}</ArvoText>
-      <ArvoText style={styles.text}>Data: {data}</ArvoText>
-      <ArvoText style={styles.text}>Duração: {duracao}</ArvoText>
-      <ArvoText style={styles.text}>Valor: {valor}</ArvoText>
-      <ArvoText style={styles.text}>Pagamento via: {pagamento}</ArvoText>
+      <ArvoText style={styles.text}>Placa: {carPlate}</ArvoText>
+      <ArvoText style={styles.text}>Hora de Início: {startTime}</ArvoText>
+      <ArvoText style={styles.text}>Hora de Término: {endTime}</ArvoText>
+      <ArvoText style={styles.text}>Data: {ticketDate}</ArvoText>
+      <ArvoText style={styles.text}>Duração: {ticketDuration}</ArvoText>
+      <ArvoText style={styles.text}>Valor: {ticketValue}</ArvoText>
+      <ArvoText style={styles.text}>Pagamento via: {ticketPayment}</ArvoText>
     </View>
   );
 

@@ -7,38 +7,35 @@ import ArvoText from '@/components/arvoText/ArvoText';
 export default function TicketDetailsScreen() {
   const {
     status,
-    placa,
-    horaInicio,
-    horaTermino,
-    data,
-    duracao,
-    valor,
-    pagamento
+    carPlate,
+    startTime,
+    endTime,
+    ticketDate,
+    ticketDuration,
+    ticketValue,
+    ticketPayment
   } = useLocalSearchParams();
 
   const router = useRouter();
-  const isAtivo = status === 'ativo';
+  //const isActive = status === 'ativo';
 
   return (
+    // TODO: substituir pelo componente de ticket e apagar styles não usados.
     <View style={styles.container}>
       <View style={styles.card}>
         <View style={styles.header}>
           <ArvoText style={styles.title}>Ticket Ativo</ArvoText>
           <Ionicons name="ellipse" size={16} color="#00C851" />
         </View>
-        <ArvoText style={styles.text}>Placa: {placa}</ArvoText>
-        <ArvoText style={styles.text}>Hora de Início: {horaInicio}</ArvoText>
-        <ArvoText style={styles.text}>Hora de Término: {horaTermino}</ArvoText>
-        <ArvoText style={styles.text}>Data: {data}</ArvoText>
-        <ArvoText style={styles.text}>Duração: {duracao}</ArvoText>
-        <ArvoText style={styles.text}>Valor: {valor}</ArvoText>
-        <ArvoText style={styles.text}>Pagamento via: {pagamento}</ArvoText>
+        <ArvoText style={styles.text}>Placa: {carPlate}</ArvoText>
+        <ArvoText style={styles.text}>Hora de Início: {startTime}</ArvoText>
+        <ArvoText style={styles.text}>Hora de Término: {endTime}</ArvoText>
+        <ArvoText style={styles.text}>Data: {ticketDate}</ArvoText>
+        <ArvoText style={styles.text}>Duração: {ticketDuration}</ArvoText>
+        <ArvoText style={styles.text}>Valor: {ticketValue}</ArvoText>
+        <ArvoText style={styles.text}>Pagamento via: {ticketPayment}</ArvoText>
       </View>
 
-      {/* <Pressable style={styles.shareButton}>
-        <Ionicons name="share-social" size={20} color="white" />
-        <ArvoText style={styles.shareText}>COMPARTILHAR</ArvoText>
-      </Pressable> */}
       <Button label='Compartilhar' icon='share-social' variant='primary' />
 
       <Button label='Voltar ao Inicio' variant='secondary' onPress={() => router.back()} />

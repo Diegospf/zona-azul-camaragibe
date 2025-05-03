@@ -15,7 +15,8 @@ export default function InitialScreen() {
 
 
       {/* Erro é pq a variavel tem que ser do tipo RelativePathString que é uma string de caminho*/}
-      <Button label='ENTRAR' route={'(tabs)' as any}/>
+      {/* para resolver é só usar um '' as any'' */}
+      <Button label='ENTRAR' route={'/loginScreen' as any}/>
 
       <Button label='REGISTRAR' route={'/registerScreen' as any}/>
       <Image

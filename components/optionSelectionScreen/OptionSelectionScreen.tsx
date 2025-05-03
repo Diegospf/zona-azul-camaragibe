@@ -42,7 +42,7 @@ export default function OptionSelectionScreen({ title = '', options }: OptionSel
                                 pressed && styles.pressedButton,
                             ]}
                             onPress={() => handlePress(index, option.onPress)}
-                            disabled={selectedIndex !== null} // Desativa todos os botões enquanto 1 está selecionado
+                            disabled={selectedIndex !== null} // Disable if another option is selected
                         >
                             <View style={styles.optionContent}>
                                 {option.icon && (
@@ -53,7 +53,7 @@ export default function OptionSelectionScreen({ title = '', options }: OptionSel
                                         style={styles.icon}
                                     />
                                 )}
-                                {/* Adicione o ícone aqui se necessário */}
+                                
                                 <ArvoText style={[styles.optionText, isSelected && styles.selectedText]}>
                                     {option.label}
                                 </ArvoText>

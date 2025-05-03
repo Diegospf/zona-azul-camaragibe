@@ -12,52 +12,52 @@ import ArvoText from '@/components/arvoText/ArvoText';
 export default function RegisterScreen() {
     //const router = useRouter();
 
-    const [nome, setNome] = useState('');
-    const [dataNascimento, setDataNascimento] = useState('');
+    const [name, setName] = useState('');
+    const [birthDate, setBirthDate] = useState('');
     const [email, setEmail] = useState('');
-    const [telefone, setTelefone] = useState('');
+    const [phone, setPhone] = useState('');
     const [cpf, setCpf] = useState('');
-    const [senha, setSenha] = useState('');
-    const [confirmarSenha, setConfirmarSenha] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const [aceitouTermos, setAceitouTermos] = useState(false);
+    const [termsAccepted, setTermsAccepted] = useState(false);
 
-    const [showSenha, setShowSenha] = useState(false);
-    const [showConfirmarSenha, setShowConfirmarSenha] = useState(false);
+    const [displayPassword, setDisplayPassword] = useState(false);
+    const [displayConfirmPassword, setDisplayConfirmPassword] = useState(false);
 
     const [error, setError] = useState('');
 
-    //para quando precisar enviar para o servidor ou banco de dados.
+    
     function handleRegistrar() {
-        // Limpa erros antigos
+        
         setError('');
 
-        // 1. Verifica se algum campo está vazio
-        if (!nome || !dataNascimento || !email || !telefone || !cpf || !senha || !confirmarSenha) {
+        
+        if (!name || !birthDate || !email || !phone || !cpf || !password || !confirmPassword) {
             setError('Por favor, preencha todos os campos.');
             return;
         }
 
-        // 2. Verifica se aceitou os termos
-        if (!aceitouTermos) {
+        
+        if (!termsAccepted) {
             setError('Você deve aceitar os termos de uso.');
             return;
         }
 
-        // 3. Verifica se as senhas coincidem
-        if (senha !== confirmarSenha) {
+        
+        if (password !== confirmPassword) {
             setError('As senhas não coincidem.');
             return;
         }
 
-        // Se passou por tudo, registra
+        
         console.log({
-            nome,
-            dataNascimento,
+            nome: name,
+            dataNascimento: birthDate,
             email,
-            telefone,
+            telefone: phone,
             cpf,
-            senha,
+            senha: password,
         });
 
         Alert.alert('Sucesso', 'Registro realizado com sucesso!');
@@ -65,44 +65,44 @@ export default function RegisterScreen() {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            {/* Nome */}
-            <InputField icon="person-outline" placeholder="Nome Completo" value={nome} onChangeText={setNome} />
+            
+            <InputField icon="person-outline" placeholder="Nome Completo" value={name} onChangeText={setName} />
 
-            {/* Data de nascimento */}
-            <InputField icon="calendar" placeholder="Data de nascimento" value={dataNascimento} onChangeText={setDataNascimento} />
+            
+            <InputField icon="calendar" placeholder="Data de nascimento" value={birthDate} onChangeText={setBirthDate} />
 
-            {/* Email */}
+            
             <InputField icon="mail" placeholder="Email" value={email} onChangeText={setEmail} />
 
-            {/* Telefone */}
-            <InputField icon="call" placeholder="Telefone" value={telefone} onChangeText={setTelefone} keyboardType='phone-pad' />
+            
+            <InputField icon="call" placeholder="Telefone" value={phone} onChangeText={setPhone} keyboardType='phone-pad' />
 
-            {/* CPF */}
+            
             <InputField icon="card" placeholder="CPF" value={cpf} onChangeText={setCpf} keyboardType='phone-pad' />
 
-            {/* Senha */}
+            
             <InputField icon="lock-closed"
                 placeholder="Senha"
-                secureTextEntry={!showSenha}
-                value={senha}
-                onChangeText={setSenha}
-                rightIcon={showSenha ? 'eye-off' : 'eye'}
-                onRightIconPress={() => setShowSenha(!showSenha)} />
+                secureTextEntry={!displayPassword}
+                value={password}
+                onChangeText={setPassword}
+                rightIcon={displayPassword ? 'eye-off' : 'eye'}
+                onRightIconPress={() => setDisplayPassword(!displayPassword)} />
 
-            {/* Confirmar Senha */}
+            
             <InputField icon="lock-closed"
                 placeholder="Confirmar senha"
-                secureTextEntry={!showConfirmarSenha}
-                value={confirmarSenha}
-                onChangeText={setConfirmarSenha}
-                rightIcon={showConfirmarSenha ? 'eye-off' : 'eye'}
-                onRightIconPress={() => setShowConfirmarSenha(!showConfirmarSenha)} />
+                secureTextEntry={!displayConfirmPassword}
+                value={confirmPassword}
+                onChangeText={setConfirmPassword}
+                rightIcon={displayConfirmPassword ? 'eye-off' : 'eye'}
+                onRightIconPress={() => setDisplayConfirmPassword(!displayConfirmPassword)} />
 
-            {/* CheckBox e termos */}
+            
             <View style={styles.checkboxContainer}>
-                <Pressable onPress={() => setAceitouTermos(!aceitouTermos)} style={styles.checkboxPressable}>
+                <Pressable onPress={() => setTermsAccepted(!termsAccepted)} style={styles.checkboxPressable}>
                     <Ionicons
-                        name={aceitouTermos ? "checkbox-outline" : "square-outline"}
+                        name={termsAccepted ? "checkbox-outline" : "square-outline"}
                         size={24}
                         color={colors.secondary}
                     />
@@ -112,12 +112,12 @@ export default function RegisterScreen() {
                 </ArvoText>
             </View>
 
-            {/* Mensagem de erro */}
+            
             {error ? (
                 <ArvoText style={styles.errorText}>{error}</ArvoText>
             ) : null}
 
-            {/* Botão Registrar */}
+            
             <Button label='REGISTRO' onPress={handleRegistrar} />
         </ScrollView>
     );

@@ -12,23 +12,23 @@ export default function TicketPaymentScreen() {
 
     return (
       <View style={styles.container}>
-        {/* Texto explicativo */}
+        
         <ArvoText style={styles.instructionText}>
           Leia o QRCode ou copie o código no aplicativo do seu banco e realize o pagamento.
         </ArvoText>
   
-        {/* QRCode */}
+        
         <View style={styles.qrContainer}>
           <QRCode value={qrCodeValue} size={200} />
         </View>
   
-        {/* Valor e tempo */}
+        
         <View style={styles.infoBox}>
           <ArvoText style={styles.infoText}>Valor: R$ 10,00</ArvoText>
           <ArvoText style={styles.infoText}>QRCode expira em: 4:39 minutos</ArvoText>
         </View>
   
-        {/* Botões usando seu componente */}
+        
         <Button
           label="PIX COPIA E COLA" route={'/buyTicketScreen/ticketSuccessScreen' as any}
         />
@@ -42,7 +42,7 @@ export default function TicketPaymentScreen() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: colors.primary, // Azul do fundo
+      backgroundColor: colors.primary, 
       padding: 16,
     },
     instructionText: {
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
       marginBottom: 20,
     },
     infoBox: {
-      backgroundColor: colors.bluePurple, // Roxinho
+      backgroundColor: colors.bluePurple,
       borderRadius: 10,
       padding: 16,
       alignItems: 'center',
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     button: {
-      backgroundColor: '#58B95E', // Verde
+      backgroundColor: '#58B95E',
       borderRadius: 10,
       marginBottom: 16,
       width: '100%',

@@ -14,12 +14,12 @@ export default function HomeScreen() {
                 resizeMode="cover"
                 style={styles.map}
             >
-                {/* Botão flutuante de localização */}
+                
                 <TouchableOpacity style={styles.floatingButton}>
                     <Ionicons name="locate" size={24} color="#fff" />
                 </TouchableOpacity>
 
-                {/* Botão principal de ação */}
+                
                 <View style={styles.buyButtonContainer}>
                     <Button label="COMPRAR TICKET" route={'../buyTicketScreen' as any}/>
                 </View>
