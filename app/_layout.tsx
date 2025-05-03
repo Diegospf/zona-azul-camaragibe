@@ -38,16 +38,16 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerStyle: {
-            backgroundColor: colors.primary, // Cor de fundo do cabeçalho para todas as telas
+            backgroundColor: colors.primary, 
           },
-          headerTintColor: '#fff', // Cor do texto do cabeçalho (título)
+          headerTintColor: '#fff', 
           headerTitleStyle: {
-            fontSize: 24, // Tamanho da fonte do título
-            fontWeight: 'bold', // Estilo da fonte do título
+            fontSize: 24, 
+            fontWeight: 'bold', 
             fontFamily: 'Arvo-Bold',
           },
           
-          headerShadowVisible: false, // Remove a sombra do cabeçalho
+          headerShadowVisible: false, 
         }}
       >
         <Stack.Screen name="index" options={{ headerShown: false }} />

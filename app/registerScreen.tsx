@@ -27,30 +27,30 @@ export default function RegisterScreen() {
 
     const [error, setError] = useState('');
 
-    //para quando precisar enviar para o servidor ou banco de dados.
+    
     function handleRegistrar() {
-        // Limpa erros antigos
+        
         setError('');
 
-        // 1. Verifica se algum campo está vazio
+        
         if (!name || !birthDate || !email || !phone || !cpf || !password || !confirmPassword) {
             setError('Por favor, preencha todos os campos.');
             return;
         }
 
-        // 2. Verifica se aceitou os termos
+        
         if (!termsAccepted) {
             setError('Você deve aceitar os termos de uso.');
             return;
         }
 
-        // 3. Verifica se as senhas coincidem
+        
         if (password !== confirmPassword) {
             setError('As senhas não coincidem.');
             return;
         }
 
-        // Se passou por tudo, registra
+        
         console.log({
             nome: name,
             dataNascimento: birthDate,
@@ -65,22 +65,22 @@ export default function RegisterScreen() {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            {/* Nome */}
+            
             <InputField icon="person-outline" placeholder="Nome Completo" value={name} onChangeText={setName} />
 
-            {/* Data de nascimento */}
+            
             <InputField icon="calendar" placeholder="Data de nascimento" value={birthDate} onChangeText={setBirthDate} />
 
-            {/* Email */}
+            
             <InputField icon="mail" placeholder="Email" value={email} onChangeText={setEmail} />
 
-            {/* Telefone */}
+            
             <InputField icon="call" placeholder="Telefone" value={phone} onChangeText={setPhone} keyboardType='phone-pad' />
 
-            {/* CPF */}
+            
             <InputField icon="card" placeholder="CPF" value={cpf} onChangeText={setCpf} keyboardType='phone-pad' />
 
-            {/* Senha */}
+            
             <InputField icon="lock-closed"
                 placeholder="Senha"
                 secureTextEntry={!displayPassword}
@@ -89,7 +89,7 @@ export default function RegisterScreen() {
                 rightIcon={displayPassword ? 'eye-off' : 'eye'}
                 onRightIconPress={() => setDisplayPassword(!displayPassword)} />
 
-            {/* Confirmar Senha */}
+            
             <InputField icon="lock-closed"
                 placeholder="Confirmar senha"
                 secureTextEntry={!displayConfirmPassword}
@@ -98,7 +98,7 @@ export default function RegisterScreen() {
                 rightIcon={displayConfirmPassword ? 'eye-off' : 'eye'}
                 onRightIconPress={() => setDisplayConfirmPassword(!displayConfirmPassword)} />
 
-            {/* CheckBox e termos */}
+            
             <View style={styles.checkboxContainer}>
                 <Pressable onPress={() => setTermsAccepted(!termsAccepted)} style={styles.checkboxPressable}>
                     <Ionicons
@@ -112,12 +112,12 @@ export default function RegisterScreen() {
                 </ArvoText>
             </View>
 
-            {/* Mensagem de erro */}
+            
             {error ? (
                 <ArvoText style={styles.errorText}>{error}</ArvoText>
             ) : null}
 
-            {/* Botão Registrar */}
+            
             <Button label='REGISTRO' onPress={handleRegistrar} />
         </ScrollView>
     );

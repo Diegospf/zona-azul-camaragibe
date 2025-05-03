@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import InputField from '@/components/inputField/InputField';
 import Button from '@/components/button/Button';
-import colors from '@/assets/colors'; // já que seu input usa esse colors também
+import colors from '@/assets/colors'; 
 
 export default function RegisterVehicleScreen() {
   const [carPlate, setCarPlate] = useState('');
@@ -73,7 +73,7 @@ export default function RegisterVehicleScreen() {
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    backgroundColor: colors.primary, // azul de fundo
+    backgroundColor: colors.primary, 
     padding: 20,
     justifyContent: 'center',
   },

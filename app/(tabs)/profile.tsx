@@ -10,7 +10,7 @@ export default function ProfileScreen() {
       secondaryButtonLabel="Voltar ao Início"
       secondaryRoute={"(tabs)"}
       primaryButtonLabel="Ver meu ticket"
-      primaryRoute={"/historyScreen/ticketScreen"} //de alguma forma passar o ticket que foi criado para ser exibido na tela
+      primaryRoute={"/historyScreen/ticketScreen"} 
     />
   );
 }

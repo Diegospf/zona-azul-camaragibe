@@ -28,7 +28,7 @@ export default function HystoryScreen() {
         ticketPayment="PIX"
         isPressable
       />
-      {/* Adicione mais tickets aqui um map deve ser feito pra ficar mais dinamico em relação a quantidade*/}
+      {/* TODO: Adicione mais tickets aqui um map deve ser feito pra ficar mais dinamico em relação a quantidade*/}
     </ScrollView>
   );
 }

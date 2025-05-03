@@ -17,9 +17,10 @@ export default function TicketDetailsScreen() {
   } = useLocalSearchParams();
 
   const router = useRouter();
-  const isAtivo = status === 'ativo';
+  //const isActive = status === 'ativo';
 
   return (
+    // TODO: substituir pelo componente de ticket e apagar styles não usados.
     <View style={styles.container}>
       <View style={styles.card}>
         <View style={styles.header}>
@@ -35,10 +36,6 @@ export default function TicketDetailsScreen() {
         <ArvoText style={styles.text}>Pagamento via: {ticketPayment}</ArvoText>
       </View>
 
-      {/* <Pressable style={styles.shareButton}>
-        <Ionicons name="share-social" size={20} color="white" />
-        <ArvoText style={styles.shareText}>COMPARTILHAR</ArvoText>
-      </Pressable> */}
       <Button label='Compartilhar' icon='share-social' variant='primary' />
 
       <Button label='Voltar ao Inicio' variant='secondary' onPress={() => router.back()} />
